@@ -1,0 +1,160 @@
+/* --- Variables de Color (Paleta Cálida) --- */
+:root {
+    --bg-color: #FDF6E3;       /* Crema suave */
+    --card-bg: #FFFFFF;        /* Blanco puro */
+    --primary-color: #E76F51;  /* Terracota */
+    --secondary-color: #F4A261;/* Arena */
+    --accent-color: #264653;   /* Azul oscuro texto */
+    --text-color: #333333;
+    --shadow: 0 10px 20px rgba(231, 111, 81, 0.15);
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    line-height: 1.6;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+h1, h2, h3 { font-family: 'Playfair Display', serif; color: var(--accent-color); }
+a { text-decoration: none; color: inherit; }
+
+/* --- Barra de Navegación --- */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem 5%;
+    background-color: var(--card-bg);
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.logo { font-size: 1.5rem; font-weight: 700; color: var(--primary-color); }
+
+.nav-links { list-style: none; display: flex; gap: 20px; }
+
+.nav-links a {
+    font-weight: 500;
+    transition: all 0.3s ease;
+    font-size: 0.9rem;
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+
+.nav-links a:hover { color: var(--primary-color); background-color: #fff0eb; }
+
+/* CLASE MÁGICA: Cambia el color cuando el link tiene esta clase */
+.nav-links a.active {
+    background-color: var(--primary-color);
+    color: white !important;
+    box-shadow: 0 4px 10px rgba(231, 111, 81, 0.4);
+}
+
+/* --- Hero Section --- */
+.hero {
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    height: 40vh; /* Un poco más pequeño para páginas internas */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
+    padding: 20px;
+}
+
+.hero h1 { font-size: 3rem; color: white; margin-bottom: 1rem; }
+.hero p { font-size: 1.2rem; max-width: 600px; }
+
+/* --- Contenido Principal --- */
+.container {
+    max-width: 1000px;
+    margin: 3rem auto;
+    padding: 0 20px;
+    flex: 1; /* Empuja el footer hacia abajo */
+}
+
+.content-card {
+    background: var(--card-bg);
+    padding: 3rem;
+    border-radius: 15px;
+    box-shadow: var(--shadow);
+    border-left: 10px solid var(--primary-color);
+}
+
+.content-card h2 { font-size: 2.5rem; margin-bottom: 1.5rem; color: var(--primary-color); }
+.content-card p { font-size: 1.1rem; margin-bottom: 1.5rem; color: #555; }
+.content-card ul { margin-left: 20px; margin-bottom: 1.5rem; }
+.content-card li { margin-bottom: 10px; }
+
+/* --- Footer --- */
+footer {
+    background-color: var(--primary-color);
+    color: white;
+    text-align: center;
+    padding: 2rem;
+    margin-top: auto;
+}
+
+/* --- Responsividad --- */
+@media (max-width: 768px) {
+    .navbar { flex-direction: column; gap: 15px; }
+    .nav-links { flex-wrap: wrap; justify-content: center; }
+    .hero h1 { font-size: 2rem; }
+    .content-card { padding: 1.5rem; }
+}
+/* --- Estilos específicos para la página de Herramientas --- */
+
+.media-card {
+    /* Hereda estilos de content-card pero añade padding extra si es necesario */
+}
+
+.media-container {
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    padding: 20px;
+    margin-top: 20px;
+    border: 1px solid #eee;
+    text-align: center;
+}
+
+/* Hacer que el video e imagen sean responsivos */
+video, .responsive-img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    display: block;
+    margin: 0 auto 20px auto;
+}
+
+.caption {
+    color: #666;
+    font-style: italic;
+    margin-top: 10px;
+}
+
+.file-info {
+    text-align: left;
+    background: white;
+    padding: 15px;
+    border-radius: 8px;
+    border-left: 4px solid var(--secondary-color);
+}
+
+.file-info ul {
+    margin-left: 20px;
+    margin-top: 10px;
+    color: #555;
+}
+
+.file-info strong {
+    color: var(--primary-color);
+}
